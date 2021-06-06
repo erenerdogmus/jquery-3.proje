@@ -1,0 +1,254 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ana Sayfa</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+        }
+
+        .wrapper {
+            height: 90vh;
+            width: 80vw;
+            max-width: 1100px;
+            margin: 2rem auto;
+            background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+            box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.4);
+            border-radius: .2rem;
+            position: relative;
+        }
+
+        .mobile-view {
+            position: absolute;
+            top: 0%;
+            display: none;
+        }
+
+            .mobile-view img {
+                width: 100%;
+            }
+
+        .tablet-view {
+            position: absolute;
+            top: 0%;
+            display: none;
+        }
+
+            .tablet-view img {
+                width: 100%;
+            }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            overflow: hidden;
+            height: 100%;
+        }
+
+            .container .title {
+                width: 90%;
+                height: 20%;
+                text-align: center;
+                padding: 2rem 2rem;
+                margin: 9rem 0;
+                z-index: 9999;
+            }
+
+            .container h3 {
+                font-family: 'Lexend Deca', sans-serif;
+                font-size: 3em;
+                color: aliceblue;
+            }
+
+            .container p {
+                font-family: 'Muli', sans-serif;
+                color: #ececf0bd;
+            }
+
+        button {
+            font-family: 'Muli', sans-serif;
+            color: black;
+            font-size: 1rem;
+            padding: .8rem 2.3rem;
+            margin: 0 .1rem;
+            border: 0;
+            border-radius: 3rem;
+            background: var(--primary-gradient);
+            cursor: pointer;
+        }
+
+        .clip-svg {
+            clip-path: url(#myClip);
+        }
+
+        .night {
+            height: 560px;
+            width: 700px;
+            background: url('background.png');
+            background-size: cover;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .surface {
+            height: 140px;
+            width: 500%;
+            display: block;
+            background: url('Img_02.png');
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            background-repeat: repeat-x;
+        }
+
+        .moveRight {
+            animation: moveRight 6s linear infinite;
+        }
+
+        @keyframes moveRight {
+            100% {
+                transform: translateX(-2950px);
+            }
+        }
+
+        .car {
+            position: absolute;
+            bottom: 43px;
+            left: 24%;
+        }
+
+        .suspension {
+            animation: suspension 1s linear infinite;
+        }
+
+        @keyframes suspension {
+            100% {
+                transform: translateY(-1px);
+            }
+
+            50% {
+                transform: translateY(2px);
+            }
+
+            0% {
+                transform: translateY(-1px);
+            }
+        }
+
+        @media only screen and (max-width: 1013px) {
+            .graphic {
+                display: none;
+            }
+
+            .container {
+                grid-template-columns: 100%;
+            }
+
+            .tablet-view {
+                display: block;
+            }
+
+            .container .title {
+                padding: 0 .9rem;
+            }
+
+                .container .title h1 {
+                    font-size: 2rem;
+                }
+
+            .container .title {
+                margin: 3rem 1rem;
+            }
+        }
+
+        @media only screen and (max-width: 678px) {
+            .tablet-view {
+                display: none;
+            }
+
+            .mobile-view {
+                display: block;
+            }
+        }
+
+        @media only screen and (max-width: 402px) {
+            .mobile-view {
+                display: none;
+            }
+
+            .container .title {
+                margin: 0;
+            }
+        }
+
+        .cls-1 {
+            fill: url(#linear-gradient);
+        }
+
+        .cls-2 {
+            fill: url(#linear-gradient-2);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="title">
+                <h3>FORM UYGULAMASI</h3>              
+                <div class="buttons">
+                    <button><a href="kayitform.html" target="_blank">KAYIT</a></button>
+                </div>
+            </div>
+            <div class="graphic">
+                <div class="clip-svg">
+                    <div class="night">
+                        <div class="surface moveRight"></div>
+                        <div class="car suspension">
+                            <img src="Img_06.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http:www.w3.org/2000/svg"
+                  viewBox="0 0 809.39 555.27">
+                    <defs>
+                        <linearGradient id="linear-gradient" x1="669" y1="470" x2="669" y2="470"
+                                        gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#7fe0f4" />
+                            <stop offset="0.1" stop-color="#76d9f1" />
+                            <stop offset="0.26" stop-color="#5cc8ea" />
+                            <stop offset="0.47" stop-color="#33abdd" />
+                            <stop offset="0.57" stop-color="#1e9cd7" />
+                            <stop offset="0.87" stop-color="#0075be" />
+                            <stop offset="0.99" stop-color="#355c97" />
+                        </linearGradient>
+                        <linearGradient id="linear-gradient-2" x1="557.61" y1="277.63" x2="1367" y2="277.63"
+                                        xlink:href="#linear-gradient" />
+                    </defs>
+                    <title>Svg_2</title>
+                    <clipPath id="myClip">
+                        <path class="cls-1" d="M669,470" transform="translate(-557.61)" />
+                        <path class="cls-2"
+                              d="M700,0S549,29,558,233c0,0,2.7,95.93,52.24,184.12C649.64,487.28,720.66,534,800.53,543.66c104.88,12.76,372,45.63,429.47-115.66,0,0,6.49-75.47,66.54-111,43.34-25.61,70.46-71.68,70.46-122V0Z"
+                              transform="translate(-557.61)" />
+                    </clipPath>
+                </svg>
+            </div>
+        </div>
+        <div class="mobile-view">
+            <img src="72.jpg" alt="">
+        </div>
+        <div class="tablet-view">
+            <img src="27.jpg" alt="">
+        </div>
+
+    </div>
+
+</body>
+</html>

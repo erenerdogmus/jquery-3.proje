@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Kayıt Formu</title>
+    <script src="jquery-3.6.0.min.js"> </script>
+
+<style type="text/css">
+
+  body{ 
+      background:#f6f6f6; 
+      font-family:tahoma
+  }
+
+ .container{ 
+    width:980px; 
+    height:300px; 
+    margin:10px auto; 
+    padding:20px 0 20px 40px;
+ }
+
+ section{
+    width:450px; 
+    height:220px; 
+    float:left;
+    margin:0 40px 60px 0;
+ }
+
+ aside{ 
+    width:450px; 
+    height:120px; 
+    float:left; 
+    margin:0 40px 60px 0;
+ }
+
+ footer{ 
+     width:980px;
+     height:100px; 
+     float:left;
+ }
+
+ .baslikkutu{ 
+     width:450px; 
+     padding:0 0 10px 0; 
+     margin:0 0 15px 0; 
+     border-bottom:2px solid #dd9d42; 
+     color:#104579; 
+     font:bold 19px tahoma;
+     
+ }
+
+ section input, aside input{ 
+     width:300px; 
+     padding:5px; 
+     border:1px dashed #a0a0a0; 
+     color:#104579; 
+     font-size:14px;
+ }
+
+ section input:hover{
+     border:1px dashed #bd652b; 
+     background:#f0ddbc;
+ }
+
+ textarea{ 
+     width:930px; 
+     height:65px;
+     padding:5px; 
+     border:1px solid #ddd; 
+     color:#4b4b4b; 
+     font-size:14px;
+ }
+
+ button, input.gonder{ 
+     width:100px; 
+     padding:10px 25px; 
+     margin:0 30px 20px 0;
+     color:#fff; font-size:14px;
+     background:#24588f; 
+     cursor:pointer; 
+     border:none ; 
+ }
+
+ tr:hover{ 
+     color:#bd652b;
+ }
+
+ tr:hover .siyah{ 
+    color:#000;
+ }
+
+ input:focus, textarea:focus {
+    outline: none;
+ }
+
+ #show th, #show td {
+    padding: 13px;
+ }
+</style>
+</head>
+<body>
+    <form action="" method="get">
+        <div class="container">
+            <section>
+                <div class="baslikkutu">Kişisel Bilgiler</div>
+
+                <table width="450" height="220">
+
+                    <tr>
+
+                        <td width="145">Ad</td>
+
+                        <td width="5">:</td>
+
+                        <td width="300"><input name="" type="text" maxlength="20" placeholder="Adınızı giriniz." required="required" id="fname" /></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Soyad</td>
+
+                        <td>:</td>
+
+                        <td><input name="" type="text" placeholder="Soyadınızı giriniz." required="required" id="lname" /></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Doğum Tarihi</td>
+
+                        <td>:</td>
+
+                        <td><input name="" type="date" required="required" id="dtarih" /></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Mail Adresi</td>
+
+                        <td>:</td>
+
+                        <td><input name="" type="email" placeholder="Mail adresinizi giriniz." required="required" id="email" /></td>
+
+                    </tr>
+                </table>
+
+            </section>
+
+            <section>
+
+                <div class="baslikkutu">Eğitim Durumu</div>
+
+                <table width="450" height="220">
+
+                    <tr>
+
+                        <td width="145">Lise</td>
+
+                        <td width="5">:</td>
+
+                        <td width="300"><input name="" type="text" placeholder="Okuduğunuz liseyi giriniz." required="required" id="okul1" /></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Lise Diploma</td>
+
+                        <td>:</td>
+
+                        <td><input name="" type="number" placeholder="Lise Diploma Notu'nu Giriniz" required="required" id="okul2" /></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td> Üniversite </td>
+
+                        <td>:</td>
+
+                        <td><input name="" type="text" placeholder="Okuduğunuz üniversiteyi giriniz." required="required" id="okul3" /></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Bölüm</td>
+
+                        <td>:</td>
+
+                        <td><input name="" type="text" placeholder="Okuduğunuz Bölüm'ü Giriniz." required="required" id="okul4" /></td>
+
+                    </tr>
+                </table>
+            </section>
+
+            <footer>
+
+                <input name="" type="button" value="tablo oluştur" onclick="AddRow()" />
+
+            </footer>
+
+        </div>
+
+    </form>
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <table border="4" id="show" style="display:none">
+        <thead>
+            <tr>
+
+
+                <th>Ad</th>
+
+                <th>Soyad</th>
+
+                <th>Doğum Tarihi</th>
+
+                <th>Email</th>
+
+                <th>Lise</th>
+
+                <th>Lise Diploma</th>
+
+                <th> Üniversite</th>
+
+                <th>Bölüm</th>
+
+            </tr>
+        </thead>
+
+    </table>
+    <table  border="4"   id="tbodys">
+     
+    </table>
+    <script type="text/javascript">
+
+
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+        var list6 = [];
+        var list7 = [];
+        var list8 = [];
+
+        var n = 1;
+        var x = 0;
+
+        var dizi = []
+
+        var kapat = 0;
+        function AddRow() {
+
+
+
+            dizi.push({
+                fname: $("#fname").val(),
+                lname: $("#lname").val(),
+                dtarih: $("#dtarih").val(),
+                email: $("#email").val(),
+                okul1: $("#okul1").val(),
+                okul2: $("#okul2").val(),
+                okul3: $("#okul3").val(),
+                okul4: $("#okul4").val(),
+
+            })
+            var temp = "";
+
+
+            for (var i = 0; i < dizi.length; i++) {
+                temp += '<tr>';
+
+                temp += '<td>' + dizi[i].fname + '</td>';
+                temp += '<td>' + dizi[i].lname + '</td>';
+                temp += '<td>' + dizi[i].dtarih + '</td>';
+                temp += '<td>' + dizi[i].email + '</td>';
+
+                temp += '<td>' + dizi[i].okul1 + '</td>';
+                temp += '<td>' + dizi[i].okul2 + '</td>';
+                temp += '<td>' + dizi[i].okul3 + '</td>';
+                temp += '<td>' + dizi[i].okul4 + '</td>';
+                temp += '</tr>';
+            }
+
+
+            $("#show").show();
+            $("#tbodys").append(temp)
+
+            kapat = 1;
+
+        }
+
+
+    </script>
+</body>
+
+</html>
+
